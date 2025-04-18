@@ -50,21 +50,24 @@ class MainActivity() : AppCompatActivity(), Parcelable {
             val correctDefinition = wordDefinition[0].definition
             val selectedDefinition = dataDefList[index]
 
-           /* if (selectedDefinition == correctDefinition) { // Correct answer
-                wordDefinition[0].streak++ // increment streak for correct word
-                streak = wordDefinition[0].streak // Update global streak
-                score += streak // increment score based on streak
+            if (selectedDefinition === correctDefinition) {
+                // Correct answer
+                wordDefinition[0].streak++; // Increment streak for correct word
+                streak = wordDefinition[0].streak; // Update global streak
+                score += streak; // Increment score based on streak
+
                 if (streak > longestStreak) {
-                    longestStreak = streak // track longest streak
+                    longestStreak = streak; // Track longest streak
                 }
-            } else { // Incorrect answer
-                wordDefinition[0].streak = 0 // Reset streak for the current word
-                streak = 0 // Reset global streak
+            } else {
+                // Incorrect answer
+                wordDefinition[0].streak = 0; // Reset streak for the current word
+                streak = 0; // Reset global streak
             }
 
-            saveWordsToDisk()
-            updateScoreAndStreakUI()
-            */pickNewWordAndLoadDataList()
+            saveWordsToDisk();
+            updateScoreAndStreakUI();
+            pickNewWordAndLoadDataList()
             myAdapter.notifyDataSetChanged()
 
 
